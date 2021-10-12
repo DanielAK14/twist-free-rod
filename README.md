@@ -41,4 +41,4 @@ From within the `build` directory call:
 
     ./example
 
-Our project in an the libigl viewer should appear.
+Our project in the libigl viewer should appear.
