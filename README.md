@@ -1,14 +1,11 @@
-# libigl example project
+# CS591 C1 Twist Free Rod Implementation
+Daniel Kehr
+Paul Menexas
 
-A blank project example showing how to use libigl and cmake. Feel free and
-encouraged to copy or fork this project as a way of starting a new personal
-project using libigl.
+A project that, given a spline or helix function, produces a "zero-twist" visualization of the curve.
+The libigl example project was used for library linking and cmake initialization.
 
-## See the tutorial first
-
-Then build, run and understand the [libigl
-tutorial](http://libigl.github.io/libigl/tutorial/).
-
+-- LIBIGL EXAMPLE PROJECT INSTRUCTION GIVEN BELOW --
 ## Dependencies
 
 The only dependencies are stl, eigen, [libigl](http://libigl.github.io/libigl/) and
@@ -19,21 +16,29 @@ The cmake build system will attempt to find libigl according to environment vari
     cd libigl-example-project/
     git clone https://github.com/libigl/libigl.git
 
-## Compile
 
-Compile this project using the standard cmake routine:
+## Compile
+The included 'ImGuiMenu.cpp' file should replace libigl's original version in ../libigl/include/igl/opengl/glfw/imgui/
+
+
+The project can be compiled using the standard cmake routine:
 
     mkdir build
     cd build
     cmake ..
     make
 
-This should find and build the dependencies and create a `example_bin` binary.
+Which should find and build the dependencies and create a `example_bin` binary.
+If there is trouble locating libigl using CMAKE, try calling cmake as:
+
+cmake -DLIBIGL_INCLUDE_DIR="your/path/for/libigl/include" -DCMAKE_PREFIX_PATH="the/same/path/for/libigl/include" ../
+
+and run make as usual
 
 ## Run
 
-From within the `build` directory just issue:
+From within the `build` directory call:
 
     ./example
 
-A glfw app should launch displaying a 3D cube.
+Our project in an the libigl viewer should appear.
